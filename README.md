@@ -5,3 +5,5 @@ GPS Tracking Device using SMS
 
 ToDo:
 - SMS Module interface.
+
+Work is still in Progress!
