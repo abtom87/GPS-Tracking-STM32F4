@@ -64,8 +64,8 @@ void enable_capture_mod_irq(void)
 	NVIC_InitTypeDef CC_IRQ_InitStruct;
 	CC_IRQ_InitStruct.NVIC_IRQChannel     = TIM1_CC_IRQn;
 	CC_IRQ_InitStruct.NVIC_IRQChannelCmd  = ENABLE;
-	CC_IRQ_InitStruct.NVIC_IRQChannelPreemptionPriority = 0x0A;
-	CC_IRQ_InitStruct.NVIC_IRQChannelSubPriority =1;
+	CC_IRQ_InitStruct.NVIC_IRQChannelPreemptionPriority = PRIO_INP_CAPTURE;
+	CC_IRQ_InitStruct.NVIC_IRQChannelSubPriority =0x00;
 
 	NVIC_Init(&CC_IRQ_InitStruct);
 

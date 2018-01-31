@@ -15,6 +15,7 @@
 #include "comm_service.h"
 #include "external_int_button.h"
 #include "i2c_lcd.h"
+#include "gpio_led.h"
 
 //#define LED_DEBUG
 #define BUF_SIZE       384
@@ -136,8 +137,9 @@ int main(void)
 
 
 		if(Rx_Interrupt_flag==TRUE)
-		{   __disable_irq();
-			USART_TX_byte(Recvd_word);
+		{
+			//__disable_irq();
+		//	USART_TX_byte(Recvd_word);
 
 			gps_string[buf_count]=Recvd_word;
 			buf_count++;
@@ -152,19 +154,28 @@ int main(void)
 			    	k++;
 				}
 
-				Time_buffer[1] += 1;
+				//Time_buffer[1] += 1;
 				//Time_buffer[1] %=0x0a;
-				LCD_Goto(1,1);
-				LCD_Write_String("Time: ");
-				LCD_Write_String(Time_buffer);
+				if(Time_buffer[1] == 0x39)
+				{
+					Time_buffer[1] = 0x30;
+					Time_buffer[0]+=1;
+				}
+				else
+					Time_buffer[1] += 1;
+
+
 				LCD_Goto(7,1);
+				//LCD_Write_String("Time: ");
+				LCD_Write_String(Time_buffer);
+				//LCD_Goto(7,1);
 
 				buf_count=0;
 
 			}
 
 			Rx_Interrupt_flag=FALSE;
-			__enable_irq();
+			//__enable_irq();
 
 
 		}

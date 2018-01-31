@@ -7,6 +7,7 @@
 
 #include "external_int_button.h"
 
+
 void enable_external_button_interrupt(void)
 {
 	NVIC_InitTypeDef NVIC_EXTINT_Button;

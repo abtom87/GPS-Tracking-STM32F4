@@ -13,6 +13,7 @@
 #include "stm32f4xx_rcc.h"
 #include "stm32f4xx_it.h"
 #include "stm32f4xx_usart.h"
+#include "vector_prio.h"
 #include <string.h>
 
 volatile uint16_t Recvd_word;

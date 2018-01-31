@@ -56,8 +56,8 @@ void enable_usart2_rx_irq(void)
 	NVIC_InitTypeDef USART2_Rx_IRQ_Struct;
 	USART2_Rx_IRQ_Struct.NVIC_IRQChannel                    = USART2_IRQn;
 	USART2_Rx_IRQ_Struct.NVIC_IRQChannelCmd                 = ENABLE;
-	USART2_Rx_IRQ_Struct.NVIC_IRQChannelPreemptionPriority  = 0;
-	USART2_Rx_IRQ_Struct.NVIC_IRQChannelSubPriority         = 2;
+	USART2_Rx_IRQ_Struct.NVIC_IRQChannelPreemptionPriority  = PRIO_USART2;
+	USART2_Rx_IRQ_Struct.NVIC_IRQChannelSubPriority         = 0;
 
 	NVIC_Init(&USART2_Rx_IRQ_Struct);
 
