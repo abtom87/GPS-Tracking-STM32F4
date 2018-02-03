@@ -13,10 +13,12 @@
 #include "stm32f4xx_rcc.h"
 #include "stm32f4xx_it.h"
 #include "stm32f4xx_usart.h"
+#include "misc.h"
+#include "stm32f4xx_gpio.h"
 #include "vector_prio.h"
 #include <string.h>
 
-volatile uint16_t Recvd_word;
+//volatile uint16_t Recvd_word;
 void init_usart2_comm_module(void);
 void init_usart2_gpio(void);
 void enable_usart2_rx_irq(void);

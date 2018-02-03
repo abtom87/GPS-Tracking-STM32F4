@@ -11,7 +11,10 @@
 #include "stm32f4xx.h"
 #include "stm32f4xx_rcc.h"
 #include "stm32f4xx_it.h"
+#include "stm32f4xx_tim.h"
+#include "stm32f4xx_gpio.h"
 #include "vector_prio.h"
+#include "misc.h"
 
 TIM_ICInitTypeDef       Tim1_IC_Struct;
 void init_capture_module(void);

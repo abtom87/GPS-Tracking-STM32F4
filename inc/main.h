@@ -25,7 +25,6 @@
 
 
 
-
 void initialiseTimer(void);
 void SysTick_Init(void);
 void Delay_ms(unsigned long);
@@ -35,6 +34,6 @@ void enable_Tim_Interrupts(void);
 
 
 
-GPIO_InitTypeDef GPIO_InitDef;
+//GPIO_InitTypeDef GPIO_InitDef;
 
 #endif /* MAIN_H_ */

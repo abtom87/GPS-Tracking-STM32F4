@@ -13,7 +13,7 @@ void enable_external_button_interrupt(void)
 	NVIC_InitTypeDef NVIC_EXTINT_Button;
 	NVIC_EXTINT_Button.NVIC_IRQChannel                   = EXTI0_IRQn;
 	NVIC_EXTINT_Button.NVIC_IRQChannelCmd                = ENABLE;
-	NVIC_EXTINT_Button.NVIC_IRQChannelPreemptionPriority = 5;
+	NVIC_EXTINT_Button.NVIC_IRQChannelPreemptionPriority = PRIO_EXT_INT0;
 	NVIC_EXTINT_Button.NVIC_IRQChannelSubPriority        = 0;
 
     NVIC_Init(&NVIC_EXTINT_Button);
@@ -46,8 +46,8 @@ void init_external_interrupt(void)
 {
 	EXTI_InitTypeDef EXT_GPIO_InitStruct;
 //	RCC_APB2PeriphClockCmd(RCC_APB2Periph_SYSCFG, ENABLE);
-
-
+//
+//
 //	SYSCFG_EXTILineConfig(EXTERNAL_BUTTON_PORT,GPIO_Pin_0);
 	EXT_GPIO_InitStruct.EXTI_Line    = EXTI_Line0;
 	EXT_GPIO_InitStruct.EXTI_LineCmd = ENABLE;

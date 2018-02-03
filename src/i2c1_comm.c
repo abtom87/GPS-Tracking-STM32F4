@@ -15,7 +15,7 @@ void init_i2c_bus_config(void)
 	I2C_InitTypeDef I2C1_InitStruct;
 
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_I2C1, ENABLE);
-	I2C1_InitStruct.I2C_ClockSpeed = 100000;
+	I2C1_InitStruct.I2C_ClockSpeed = 120000;
 	I2C1_InitStruct.I2C_Ack = I2C_Ack_Enable;
 	I2C1_InitStruct.I2C_AcknowledgedAddress = I2C_AcknowledgedAddress_7bit;
 	I2C1_InitStruct.I2C_Mode = I2C_Mode_I2C;
